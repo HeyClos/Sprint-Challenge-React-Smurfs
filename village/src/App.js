@@ -19,20 +19,45 @@ class App extends Component {
     axios
     .get('http://localhost:3333/smurfs')
     .then(res => {
-      console.log(res);
-      this.setState({ friends: res.data });
+      this.setState({ smurfs: res.data });
     })
     .catch(err => console.log(err));
+  }
+
+  addSmurf = (event, smurf) => {
+    event.preventDefault();
+    // add code to create the smurf using the api
+    axios
+      .post('http://localhost:3333/smurfs', smurf)
+      .then (res => {
+        this.setState ({
+          smurfs: res.data
+        })
+      })
+      .catch(err => {
+        console.log(err);
+    });
   }
 
   render() {
     return (
       <div className="App">
-        <SmurfForm />
+        <SmurfForm addSmurf={this.addSmurf}/>
         <Smurfs smurfs={this.state.smurfs} />
       </div>
     );
   }
 }
+// need Navlink and Link and Route
+// check reame, / , smurfform????? 
+// inside surf form add a button and link and have it s
+// have a button say return to smurf list
+// have a navlink do the same.
+// build a nav on top of my routes and iplement my nav link in there.
+// Tuesday sandbox has NavLink. 
+
+
+// <nav> here import and use NavLink </nav>
+
 
 export default App;
