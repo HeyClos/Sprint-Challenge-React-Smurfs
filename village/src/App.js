@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Route, Link, NavLink } from 'react-router-dom'
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
@@ -42,12 +43,36 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SmurfForm addSmurf={this.addSmurf}/>
-        <Smurfs smurfs={this.state.smurfs} />
+        <ul className="navbar">
+          <li>
+            <Link exact to="/"> Home of Smurf </Link>
+          </li>
+          <li>
+            <NavLink to="/smurfs" activeClassName="activeNavButton">
+              <button>Click to See Smurfs!</button>
+            </NavLink>
+          </li>
+        </ul>
+
+        <Route path="/" render={props => <SmurfForm {...props} addSmurf={this.addSmurf} />}/>
+        <Route path="/smurfs" render={props => <Smurfs {...props} smurfs={this.state.smurfs} /> } />
+
+
+
       </div>
     );
   }
 }
+
+// render() {
+//   return (
+//     <div className="App">
+//       <SmurfForm addSmurf={this.addSmurf}/>
+//       <Smurfs smurfs={this.state.smurfs} />
+//     </div>
+//   );
+// }
+// }
 // need Navlink and Link and Route
 // check reame, / , smurfform????? 
 // inside surf form add a button and link and have it s
