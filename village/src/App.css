@@ -11,10 +11,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: lightblue; 
+}
+
+.navbar > li {
+  margin: 20px;
 }
 
 .navbar > li > a.activeNavButton { 
-  background-color: red; 
-  margin: 4px;
+  background-color: blue; 
+  
   color: white; 
 }

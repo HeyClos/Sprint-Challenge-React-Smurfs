@@ -45,7 +45,7 @@ class App extends Component {
       <div className="App">
         <ul className="navbar">
           <li>
-            <Link exact to="/"> Home of Smurf </Link>
+            <Link to="/"> Home of Smurf </Link>
           </li>
           <li>
             <NavLink to="/smurfs" activeClassName="activeNavButton">
@@ -56,7 +56,7 @@ class App extends Component {
 
         <Route path="/" render={props => <SmurfForm {...props} addSmurf={this.addSmurf} />}/>
         <Route path="/smurfs" render={props => <Smurfs {...props} smurfs={this.state.smurfs} /> } />
-
+      
 
 
       </div>
