@@ -64,15 +64,6 @@ class App extends Component {
   }
 }
 
-// render() {
-//   return (
-//     <div className="App">
-//       <SmurfForm addSmurf={this.addSmurf}/>
-//       <Smurfs smurfs={this.state.smurfs} />
-//     </div>
-//   );
-// }
-// }
 // need Navlink and Link and Route
 // check reame, / , smurfform????? 
 // inside surf form add a button and link and have it s

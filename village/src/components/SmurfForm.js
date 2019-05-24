@@ -20,32 +20,6 @@ class SmurfForm extends Component {
     };
   }
 
-  // addSmurf = (event, smurf) => {
-  //   event.preventDefault();
-  //   // add code to create the smurf using the api
-  //   axios
-  //     .post('http://localhost:3333/smurfs', smurf)
-  //     .then (res => {
-  //       this.setState ({
-  //         smurfs: res.data
-  //       })
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //   });
-  // }
-
-
-  // addSmurf = event => {
-  //   event.preventDefault();
-  //   // add code to create the smurf using the api
-
-  //   this.setState({
-  //     name: '',
-  //     age: '',
-  //     height: ''
-  //   });
-  // }
   handleInputChange = e => {
     this.props.addSmurf(e, this.state.smurf);
     this.setState ({
@@ -56,12 +30,7 @@ class SmurfForm extends Component {
       }
     });
   };
-  // handleInputChange = e => {
-  //   this.setState({ [e.target.name]: e.target.value });
-  // };
 
-
-  //adding this method because its how i did it yesterday.
   changeHandler = ev => {
     ev.persist();
     this.setState(prevState => ({
@@ -75,13 +44,6 @@ class SmurfForm extends Component {
   render() {
     return (
       <div className="SmurfForm">
-        {/* <form onSubmit={this.addSmurf}>
-          <input
-            onChange={this.handleInputChange}
-            placeholder="name"
-            value={this.state.name}
-            name="name"
-          /> */}
         <form onSubmit={this.handleInputChange}>
           <input
             onChange={this.changeHandler}
